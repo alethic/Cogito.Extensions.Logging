@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/wasabii/Cogito.Extensions.Logging</PackageProjectUrl>
+    <PackageIconUrl>https://cloverluxussc.blob.core.windows.net/public/cogito-nuget-icon.png</PackageIconUrl>
+    <Authors>Jerome Haltom</Authors>
+    <Company>Jerome Haltom</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cogito.Autofac" Version="0.1.0-unstable0007" />
+    <PackageReference Include="Cogito.Autofac.DependencyInjection" Version="0.1.0-unstable0007" />
+    <PackageReference Include="Cogito.Core" Version="2.1.0-unstable0035" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>
