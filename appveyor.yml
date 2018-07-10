@@ -22,3 +22,4 @@ build:
 artifacts:
   - path: pkg\*.nupkg
     name: Cogito.Extensions.Logging
+     

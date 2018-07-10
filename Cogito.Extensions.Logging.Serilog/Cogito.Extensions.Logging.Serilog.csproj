@@ -6,6 +6,7 @@
       <PackageIconUrl>https://cloverluxussc.blob.core.windows.net/public/cogito-nuget-icon.png</PackageIconUrl>
       <Authors>Jerome Haltom</Authors>
       <Company>Jerome Haltom</Company>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
