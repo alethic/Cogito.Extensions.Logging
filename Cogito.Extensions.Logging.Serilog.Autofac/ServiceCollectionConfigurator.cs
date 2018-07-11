@@ -9,6 +9,9 @@ using Microsoft.Extensions.Logging;
 namespace Cogito.Extensions.Logging.Serilog.Autofac
 {
 
+    /// <summary>
+    /// Removes existing logging implementations from the <see cref="IServiceCollection"/>.
+    /// </summary>
     [RegisterAs(typeof(IServiceCollectionConfigurator))]
     public class ServiceCollectionConfigurator :
         IServiceCollectionConfigurator
