@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 using Serilog.Debugging;
 
-namespace FileAndServe.Components.Logging
+namespace Cogito.Extensions.Logging.Serilog
 {
 
     /// <summary>

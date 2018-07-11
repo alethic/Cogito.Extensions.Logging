@@ -2,12 +2,11 @@
 
 using Cogito.Autofac;
 using Cogito.Autofac.DependencyInjection;
-using Cogito.Extensions.Logging.Serilog.Autofac;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace FileAndServe.Components.Logging
+namespace Cogito.Extensions.Logging.Serilog.Autofac
 {
 
     [RegisterAs(typeof(IServiceCollectionConfigurator))]

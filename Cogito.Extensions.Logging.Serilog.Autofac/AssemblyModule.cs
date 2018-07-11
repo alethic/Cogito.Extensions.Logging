@@ -2,14 +2,13 @@
 
 using Cogito.Autofac;
 
-using FileAndServe.Components.Logging;
-
 using Microsoft.Extensions.Logging;
 
 using Serilog.Extensions.Logging;
 
 namespace Cogito.Extensions.Logging.Serilog.Autofac
 {
+
     public class AssemblyModule :
         Module
     {
@@ -22,4 +21,5 @@ namespace Cogito.Extensions.Logging.Serilog.Autofac
         }
 
     }
+
 }
