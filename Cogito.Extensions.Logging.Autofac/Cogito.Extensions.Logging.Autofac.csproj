@@ -9,4 +9,13 @@
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Cogito.Autofac" Version="0.1.0-unstable0007" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj" />
+  </ItemGroup>
+
 </Project>
