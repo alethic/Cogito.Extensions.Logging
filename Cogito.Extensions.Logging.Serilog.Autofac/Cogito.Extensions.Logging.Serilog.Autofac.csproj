@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj" />
     <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj" />
   </ItemGroup>
 

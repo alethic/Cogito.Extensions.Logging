@@ -17,7 +17,6 @@ namespace Cogito.Extensions.Logging.Serilog.Autofac
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
-
             builder.Register<ILoggerProvider>(ctx => new SerilogLoggerProvider(ctx.Resolve<global::Serilog.ILogger>(), true)).SingleInstance();
             builder.Register<ILoggerFactory>(ctx => new SerilogLoggerFactory(ctx.Resolve<ILoggerProvider>())).SingleInstance();
         }
