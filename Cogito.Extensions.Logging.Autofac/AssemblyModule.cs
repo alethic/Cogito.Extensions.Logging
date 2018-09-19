@@ -28,7 +28,7 @@ namespace Cogito.Extensions.Logging.Autofac
 
             // register root logger
             builder.Register(ctx => ctx.Resolve<ILoggerFactory>().CreateLogger(""))
-                .ExternallyOwned();
+                .SingleInstance();
 
             // register actual provider for logger instances
             builder.Register((c, p) =>
