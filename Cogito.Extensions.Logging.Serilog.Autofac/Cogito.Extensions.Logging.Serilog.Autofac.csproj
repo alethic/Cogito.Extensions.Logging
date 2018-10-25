@@ -10,9 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cogito.Autofac" Version="0.1.0-unstable0008" />
-    <PackageReference Include="Cogito.Autofac.DependencyInjection" Version="0.1.0-unstable0008" />
-    <PackageReference Include="Cogito.Core" Version="2.1.0-unstable0035" />
+    <PackageReference Include="Cogito.Autofac" Version="1.0.0" />
+    <PackageReference Include="Cogito.Autofac.DependencyInjection" Version="1.0.0" />
+    <PackageReference Include="Cogito.Core" Version="3.0.0" />
     <PackageReference Include="Cogito.Serilog.Autofac" Version="0.1.0-unstable0002" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
