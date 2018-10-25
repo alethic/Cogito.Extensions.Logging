@@ -29,7 +29,10 @@ namespace Cogito.Extensions.Logging.Autofac
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
-            builder.Register(ctx => ctx.Resolve<ILoggerFactory>().CreateLogger(""));
+
+            // register root logger
+            builder.Register(ctx => ctx.Resolve<ILoggerFactory>().CreateLogger(""))
+                .SingleInstance();
 
             // register actual provider for logger instances
             builder.Register((c, p) =>
