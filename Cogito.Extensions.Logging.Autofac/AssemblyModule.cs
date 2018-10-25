@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Autofac;
 using Autofac.Core;
+using Autofac.Core.Activators.Delegate;
 using Autofac.Core.Activators.Reflection;
+using Autofac.Core.Lifetime;
+using Autofac.Core.Registration;
 
 using Cogito.Autofac;
 
@@ -44,38 +48,69 @@ namespace Cogito.Extensions.Logging.Autofac
             })
             .As<ILogger>()
             .ExternallyOwned();
+
+            builder.RegisterSource(new LoggerRegistrationSource());
         }
 
         protected override void AttachToComponentRegistration(IComponentRegistry componentRegistry, IComponentRegistration registration)
         {
             // ignore components that provide loggers
-            if (registration.Services.OfType<TypedService>().Any(ts => ts.ServiceType == typeof(ILogger)))
+            if (registration.Services.OfType<TypedService>().Any(ts => ts.ServiceType.IsAssignableTo<ILogger>()))
                 return;
 
             if (registration.Activator is ReflectionActivator ra)
             {
-                // find ctors that accept a logger
-                var any = ra.ConstructorFinder
+                var parameters = ra.ConstructorFinder
                     .FindConstructors(ra.LimitType)
-                    .SelectMany(ctor => ctor.GetParameters())
-                    .Any(pi => pi.ParameterType == typeof(ILogger));
+                    .SelectMany(ctor => ctor.GetParameters());
 
-                // no ctors found
-                if (!any)
-                    return;
-
-                // attach event to inject logger
-                registration.Preparing += (sender, args) =>
+                if (parameters.Any(pi => pi.ParameterType == typeof(ILogger)))
                 {
-                    // discover context logger instance from registered logger
-                    var logger = args.Context.Resolve<ILoggerFactory>()?.CreateLogger(registration.Activator.LimitType);
-                    if (logger == null)
-                        throw new NullReferenceException();
-
-                    // append logger parameter
-                    args.Parameters = new[] { TypedParameter.From(logger) }.Concat(args.Parameters);
-                };
+                    registration.Preparing += (sender, args) =>
+                    {
+                        var logger = args.Context.Resolve<ILoggerFactory>().CreateLogger(registration.Activator.LimitType);
+                        args.Parameters = args.Parameters.Append(TypedParameter.From(logger));
+                    };
+                }
             }
+        }
+
+        class LoggerRegistrationSource :
+            IRegistrationSource
+        {
+
+            public bool IsAdapterForIndividualComponents => false;
+
+            public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Func<Service, IEnumerable<IComponentRegistration>> registrationAccessor)
+            {
+                if (service is IServiceWithType s)
+                {
+                    if (s.ServiceType == typeof(ILogger))
+                        yield return new ComponentRegistration(
+                            Guid.NewGuid(),
+                            new DelegateActivator(s.ServiceType, (c, p) => c.Resolve<ILoggerFactory>().CreateLogger("")),
+                            new CurrentScopeLifetime(),
+                            InstanceSharing.None,
+                            InstanceOwnership.OwnedByLifetimeScope,
+                            new[] { service },
+                            new Dictionary<string, object>());
+
+                    if (s.ServiceType.IsGenericType &&
+                        s.ServiceType.GetGenericTypeDefinition() == typeof(ILogger<>))
+                        yield return new ComponentRegistration(
+                            Guid.NewGuid(),
+                            new DelegateActivator(s.ServiceType, (c, p) =>
+                                Activator.CreateInstance(
+                                    typeof(Logger<>).MakeGenericType(s.ServiceType.GetGenericArguments()[0]),
+                                    c.Resolve<ILoggerFactory>())),
+                            new CurrentScopeLifetime(),
+                            InstanceSharing.None,
+                            InstanceOwnership.OwnedByLifetimeScope,
+                            new[] { service },
+                            new Dictionary<string, object>());
+                }
+            }
+
         }
 
     }

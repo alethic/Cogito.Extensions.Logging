@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="FluentAssertions" Version="5.4.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj" />
+    <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj" />
+    <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj" />
+    <ProjectReference Include="..\Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -8,13 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Extensions.Logging", "Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj", "{D7D1F86B-0A6F-4219-AC0C-4481E73C096B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging", "Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj", "{D7D1F86B-0A6F-4219-AC0C-4481E73C096B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Extensions.Logging.Autofac", "Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj", "{5F8E524F-6065-4B4B-80D1-FD5324C0DD7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Autofac", "Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj", "{5F8E524F-6065-4B4B-80D1-FD5324C0DD7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Extensions.Logging.Serilog", "Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj", "{1867587E-B8C1-4C3C-95A4-E79A2334F1CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog", "Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj", "{1867587E-B8C1-4C3C-95A4-E79A2334F1CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Extensions.Logging.Serilog.Autofac", "Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj", "{D7F43997-2879-4E3B-91C6-EF14F6503863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog.Autofac", "Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj", "{D7F43997-2879-4E3B-91C6-EF14F6503863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Extensions.Logging.Tests", "Cogito.Extensions.Logging.Tests\Cogito.Extensions.Logging.Tests.csproj", "{18AF746F-16C1-4157-9B0B-ED4FCD405C60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{D7F43997-2879-4E3B-91C6-EF14F6503863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7F43997-2879-4E3B-91C6-EF14F6503863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7F43997-2879-4E3B-91C6-EF14F6503863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
