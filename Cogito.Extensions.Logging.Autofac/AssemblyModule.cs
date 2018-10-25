@@ -29,29 +29,7 @@ namespace Cogito.Extensions.Logging.Autofac
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
-
-            // register root logger
-            builder.Register(ctx => ctx.Resolve<ILoggerFactory>().CreateLogger(""))
-                .SingleInstance();
-
-            // register actual provider for logger instances
-            builder.Register((c, p) =>
-            {
-                // find root logger
-                var factory = c.Resolve<ILoggerFactory>();
-
-                // generate based on type
-                var targetType = p.OfType<NamedParameter>()
-                    .FirstOrDefault(np => np.Name == TargetTypeParameterName && np.Value is Type);
-                if (targetType != null)
-                    return factory.CreateLogger((Type)targetType.Value);
-
-                // default instance
-                return factory.CreateLogger("");
-            })
-            .As<ILogger>()
-            .ExternallyOwned();
-
+            builder.Register(ctx => ctx.Resolve<ILoggerFactory>().CreateLogger("")).SingleInstance();
             builder.RegisterSource(new LoggerRegistrationSource());
         }
 
@@ -94,7 +72,7 @@ namespace Cogito.Extensions.Logging.Autofac
                             new DelegateActivator(s.ServiceType, (c, p) => c.Resolve<ILoggerFactory>().CreateLogger("")),
                             new CurrentScopeLifetime(),
                             InstanceSharing.None,
-                            InstanceOwnership.OwnedByLifetimeScope,
+                            InstanceOwnership.ExternallyOwned,
                             new[] { service },
                             new Dictionary<string, object>());
 
@@ -108,7 +86,7 @@ namespace Cogito.Extensions.Logging.Autofac
                                     c.Resolve<ILoggerFactory>())),
                             new CurrentScopeLifetime(),
                             InstanceSharing.None,
-                            InstanceOwnership.OwnedByLifetimeScope,
+                            InstanceOwnership.ExternallyOwned,
                             new[] { service },
                             new Dictionary<string, object>());
                 }
