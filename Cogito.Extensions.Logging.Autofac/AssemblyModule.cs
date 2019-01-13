@@ -20,13 +20,12 @@ namespace Cogito.Extensions.Logging.Autofac
     /// Makes the Microsoft Extensions Logger available to the Autofac container. Implementation expects a registered
     /// <see cref="ILoggerFactory"/>.
     /// </summary>
-    public class AssemblyModule :
-        Module
+    public class AssemblyModule : ModuleBase
     {
 
         const string TargetTypeParameterName = "Autofac.AutowiringPropertyInjector.InstanceType";
 
-        protected override void Load(ContainerBuilder builder)
+        protected override void Register(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
             builder.Register(ctx => ctx.Resolve<ILoggerFactory>().CreateLogger("")).SingleInstance();

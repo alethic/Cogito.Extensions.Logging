@@ -9,11 +9,10 @@ using Serilog.Extensions.Logging;
 namespace Cogito.Extensions.Logging.Serilog.Autofac
 {
 
-    public class AssemblyModule :
-        Module
+    public class AssemblyModule : ModuleBase
     {
 
-        protected override void Load(ContainerBuilder builder)
+        protected override void Register(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
             builder.Register<ILoggerProvider>(ctx => new SerilogLoggerProvider(ctx.Resolve<global::Serilog.ILogger>(), true)).SingleInstance();
