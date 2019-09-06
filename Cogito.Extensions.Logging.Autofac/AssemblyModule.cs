@@ -23,8 +23,6 @@ namespace Cogito.Extensions.Logging.Autofac
     public class AssemblyModule : ModuleBase
     {
 
-        const string TargetTypeParameterName = "Autofac.AutowiringPropertyInjector.InstanceType";
-
         protected override void Register(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
