@@ -30,7 +30,7 @@ namespace Cogito.Extensions.Logging.Autofac
             builder.RegisterSource(new LoggerRegistrationSource());
         }
 
-        protected override void AttachToComponentRegistration(IComponentRegistry componentRegistry, IComponentRegistration registration)
+        protected override void AttachToComponentRegistration(IComponentRegistryBuilder componentRegistry, IComponentRegistration registration)
         {
             // ignore components that provide loggers
             if (registration.Services.OfType<TypedService>().Any(ts => ts.ServiceType.IsAssignableTo<ILogger>()))
