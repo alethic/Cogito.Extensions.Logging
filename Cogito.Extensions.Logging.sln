@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27825.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7271F8CF-C4EC-47FE-91F3-FF3331482C4F}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging", "Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj", "{D7D1F86B-0A6F-4219-AC0C-4481E73C096B}"
@@ -16,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog.Autofac", "Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj", "{D7F43997-2879-4E3B-91C6-EF14F6503863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Extensions.Logging.Tests", "Cogito.Extensions.Logging.Tests\Cogito.Extensions.Logging.Tests.csproj", "{18AF746F-16C1-4157-9B0B-ED4FCD405C60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Tests", "Cogito.Extensions.Logging.Tests\Cogito.Extensions.Logging.Tests.csproj", "{18AF746F-16C1-4157-9B0B-ED4FCD405C60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
