@@ -1,23 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Cogito.Autofac" Version="2.0.4" />
-    <PackageReference Include="Cogito.Autofac.DependencyInjection" Version="2.0.4" />
-    <PackageReference Include="Cogito.Core" Version="3.0.11" />
-    <PackageReference Include="Cogito.Serilog.Autofac" Version="2.0.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.1" />
-    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Cogito.Autofac" Version="2.0.6" />
+        <PackageReference Include="Cogito.Autofac.DependencyInjection" Version="2.0.6" />
+        <PackageReference Include="Cogito.Core" Version="3.0.11" />
+        <PackageReference Include="Cogito.Serilog.Autofac" Version="2.0.3" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj" />
-    <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj" />
+        <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj" />
+    </ItemGroup>
 
 </Project>
