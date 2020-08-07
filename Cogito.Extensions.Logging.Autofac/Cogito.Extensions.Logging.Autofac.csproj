@@ -2,11 +2,12 @@
 
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+        <Description>Makes Microsoft.Extensions.Logging objects available to the Autofac container.</Description>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cogito.Autofac" Version="2.2.5" />
+        <PackageReference Include="Cogito.Autofac" Version="2.2.10" />
     </ItemGroup>
 
     <ItemGroup>
