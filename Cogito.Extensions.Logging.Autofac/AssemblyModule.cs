@@ -44,22 +44,25 @@ namespace Cogito.Extensions.Logging.Autofac
 
                 if (parameters.Any(pi => pi.ParameterType == typeof(ILogger)))
                 {
-                    registration.Preparing += (sender, args) =>
+                    registration.PipelineBuilding += (sender, args) =>
                     {
-                        var logger = args.Context.Resolve<ILoggerFactory>().CreateLogger(registration.Activator.LimitType);
-                        args.Parameters = args.Parameters.Append(TypedParameter.From(logger));
+                        args.Use(global::Autofac.Core.Resolving.Pipeline.PipelinePhase.ParameterSelection, (context, next) =>
+                        {
+                            var logger = context.Resolve<ILoggerFactory>().CreateLogger(registration.Activator.LimitType);
+                            context.ChangeParameters(context.Parameters.Append(TypedParameter.From(logger)));
+                            next(context);
+                        });
                     };
                 }
             }
         }
 
-        class LoggerRegistrationSource :
-            IRegistrationSource
+        class LoggerRegistrationSource : IRegistrationSource
         {
 
             public bool IsAdapterForIndividualComponents => false;
 
-            public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Func<Service, IEnumerable<IComponentRegistration>> registrationAccessor)
+            public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Func<Service, IEnumerable<ServiceRegistration>> registrationAccessor)
             {
                 if (service is IServiceWithType s)
                 {
