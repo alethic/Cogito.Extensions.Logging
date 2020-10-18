@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cogito.Serilog" Version="2.0.13" />
-        <PackageReference Include="Serilog" Version="2.9.0" />
+        <PackageReference Include="Cogito.Serilog" Version="2.0.15" />
+        <PackageReference Include="Serilog" Version="2.10.0" />
     </ItemGroup>
 
     <ItemGroup>
