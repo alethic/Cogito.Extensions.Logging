@@ -1,4 +1,6 @@
-﻿using Autofac;
+﻿using System;
+
+using Autofac;
 
 using Cogito.Autofac;
 
@@ -36,9 +38,11 @@ namespace Cogito.Extensions.Logging.Tests.Autofac
         class NeedsLogger
         {
 
+            readonly ILogger logger;
+
             public NeedsLogger(ILogger logger)
             {
-
+                this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             }
 
         }
@@ -56,9 +60,11 @@ namespace Cogito.Extensions.Logging.Tests.Autofac
         class NeedsGenericLogger
         {
 
+            readonly ILogger<NeedsGenericLogger> logger;
+
             public NeedsGenericLogger(ILogger<NeedsGenericLogger> logger)
             {
-
+                this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             }
 
         }

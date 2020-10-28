@@ -10,8 +10,7 @@ namespace Cogito.Extensions.Logging.Serilog
     /// <summary>
     /// Implements <see cref="ILoggerFactory"/> so that we can inject Serilog Logger.
     /// </summary>
-    public class SerilogLoggerFactory :
-        ILoggerFactory
+    public class SerilogLoggerFactory : ILoggerFactory
     {
 
         readonly ILoggerProvider provider;
@@ -20,7 +19,6 @@ namespace Cogito.Extensions.Logging.Serilog
         /// Initializes a new instance.
         /// </summary>
         /// <param name="provider"></param>
-        /// <param name="dispose"></param>
         public SerilogLoggerFactory(ILoggerProvider provider)
         {
             this.provider = provider ?? throw new ArgumentNullException(nameof(provider));
