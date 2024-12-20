@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageProjectReference Include="..\Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj">
+            <PackageTargetPath>.</PackageTargetPath>
+        </PackageProjectReference>
+        <PackageProjectReference Include="..\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj">
+            <PackageTargetPath>.</PackageTargetPath>
+        </PackageProjectReference>
+        <PackageProjectReference Include="..\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj">
+            <PackageTargetPath>.</PackageTargetPath>
+        </PackageProjectReference>
+        <PackageProjectReference Include="..\Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj">
+            <PackageTargetPath>.</PackageTargetPath>
+        </PackageProjectReference>
+    </ItemGroup>
+
+</Project>

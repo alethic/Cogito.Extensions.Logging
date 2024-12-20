@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net8.0;net481</TargetFrameworks>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+        <PackageReference Include="MSTest.TestAdapter" Version="3.7.0" />
+        <PackageReference Include="MSTest.TestFramework" Version="3.7.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj" />
+        <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj" />
+        <ProjectReference Include="..\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj" />
+        <ProjectReference Include="..\Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj" />
+    </ItemGroup>
+
+</Project>

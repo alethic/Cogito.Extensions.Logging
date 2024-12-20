@@ -1,23 +1,38 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29721.120
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7271F8CF-C4EC-47FE-91F3-FF3331482C4F}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
+		Cogito.Extensions.Logging.dist.msbuildproj = Cogito.Extensions.Logging.dist.msbuildproj
+		.github\workflows\Cogito.Extensions.Logging.yml = .github\workflows\Cogito.Extensions.Logging.yml
 		Directory.Build.props = Directory.Build.props
+		GitVersion.yml = GitVersion.yml
+		global.json = global.json
+		icon.png = icon.png
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging", "Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj", "{D7D1F86B-0A6F-4219-AC0C-4481E73C096B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging", "src\Cogito.Extensions.Logging\Cogito.Extensions.Logging.csproj", "{D7D1F86B-0A6F-4219-AC0C-4481E73C096B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Autofac", "Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj", "{5F8E524F-6065-4B4B-80D1-FD5324C0DD7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Autofac", "src\Cogito.Extensions.Logging.Autofac\Cogito.Extensions.Logging.Autofac.csproj", "{5F8E524F-6065-4B4B-80D1-FD5324C0DD7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog", "Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj", "{1867587E-B8C1-4C3C-95A4-E79A2334F1CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog", "src\Cogito.Extensions.Logging.Serilog\Cogito.Extensions.Logging.Serilog.csproj", "{1867587E-B8C1-4C3C-95A4-E79A2334F1CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog.Autofac", "Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj", "{D7F43997-2879-4E3B-91C6-EF14F6503863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Serilog.Autofac", "src\Cogito.Extensions.Logging.Serilog.Autofac\Cogito.Extensions.Logging.Serilog.Autofac.csproj", "{D7F43997-2879-4E3B-91C6-EF14F6503863}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Tests", "Cogito.Extensions.Logging.Tests\Cogito.Extensions.Logging.Tests.csproj", "{18AF746F-16C1-4157-9B0B-ED4FCD405C60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Extensions.Logging.Tests", "src\Cogito.Extensions.Logging.Tests\Cogito.Extensions.Logging.Tests.csproj", "{18AF746F-16C1-4157-9B0B-ED4FCD405C60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08491345-6DFC-4448-B985-333F8E13259D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dist", "dist", "{F86FBEF1-4B27-4000-BA5E-5249E46D3B65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dist-nuget", "src\dist-nuget\dist-nuget.csproj", "{8B1FBBD1-0D0B-4C24-AA74-C78604120284}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dist-tests", "src\dist-tests\dist-tests.csproj", "{B2919CF5-1EB4-46C2-BBC4-A6EC0C8EA184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +60,26 @@ Global
 		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18AF746F-16C1-4157-9B0B-ED4FCD405C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1FBBD1-0D0B-4C24-AA74-C78604120284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1FBBD1-0D0B-4C24-AA74-C78604120284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1FBBD1-0D0B-4C24-AA74-C78604120284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1FBBD1-0D0B-4C24-AA74-C78604120284}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2919CF5-1EB4-46C2-BBC4-A6EC0C8EA184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2919CF5-1EB4-46C2-BBC4-A6EC0C8EA184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2919CF5-1EB4-46C2-BBC4-A6EC0C8EA184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2919CF5-1EB4-46C2-BBC4-A6EC0C8EA184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D7D1F86B-0A6F-4219-AC0C-4481E73C096B} = {08491345-6DFC-4448-B985-333F8E13259D}
+		{5F8E524F-6065-4B4B-80D1-FD5324C0DD7E} = {08491345-6DFC-4448-B985-333F8E13259D}
+		{1867587E-B8C1-4C3C-95A4-E79A2334F1CB} = {08491345-6DFC-4448-B985-333F8E13259D}
+		{D7F43997-2879-4E3B-91C6-EF14F6503863} = {08491345-6DFC-4448-B985-333F8E13259D}
+		{18AF746F-16C1-4157-9B0B-ED4FCD405C60} = {08491345-6DFC-4448-B985-333F8E13259D}
+		{8B1FBBD1-0D0B-4C24-AA74-C78604120284} = {F86FBEF1-4B27-4000-BA5E-5249E46D3B65}
+		{B2919CF5-1EB4-46C2-BBC4-A6EC0C8EA184} = {F86FBEF1-4B27-4000-BA5E-5249E46D3B65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF4B3820-4206-4316-82A5-DEA5792C6A71}
