@@ -86,7 +86,7 @@ jobs:
     strategy:
       matrix:
         run:
-        - Cogito.Extensions.Options.Tests
+        - Cogito.Extensions.Logging.Tests
         sys:
         - win-x64
         - linux-x64
